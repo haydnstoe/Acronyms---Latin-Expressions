@@ -1,22 +1,380 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Interactive Quiz</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Legal English – Full Site (Structure B Combined)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f7f7f7;
+        line-height: 1.6;
+    }
+    header {
+        background: #003366;
+        color: white;
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    nav a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    main {
+        padding: 20px;
+    }
+    .section {
+        background: white;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+    details {
+        margin-bottom: 10px;
+    }
+    summary {
+        font-weight: bold;
+        cursor: pointer;
+        color: #003366;
+    }
+    .quiz-question {
+        margin-bottom: 15px;
+        padding: 10px;
+        background: #eef4ff;
+        border-radius: 6px;
+    }
+    button {
+        margin-top: 8px;
+        padding: 6px 12px;
+        background: #003366;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #0055aa;
+    }
+    .feedback {
+        margin-top: 8px;
+        font-weight: bold;
+    }
+    h1, h2, h3 {
+        margin-top: 0;
+    }
+</style>
 </head>
-<body>
-  <h1>HTML Basics Quiz</h1>
-  <form id="quiz-form">
-    <div>
-      <p>1. What does HTML stand for?</p>
-      <input type="radio" name="q1" value="a"> Home Tool Markup Language<br>
-      <input type="radio" name="q1" value="b"> HyperText Markup Language<br>
-      <input type="radio" name="q1" value="c"> Hyperlink Text Management Language<br>
-    </div>
-    <button type="button" onclick="submitQuiz()">Submit</button>
-  </form>
-  <div id="result"></div>
 
-  <script src="script.js"></script>
+<body>
+
+<header>
+    <h1>Legal English: Acronyms & Latin Expressions</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#acronyms">Acronyms</a>
+        <a href="#latin">Latin</a>
+        <a href="#practice">Practice</a>
+        <a href="#assessment">Assessment</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- HOME SECTION -->
+<div id="home" class="section">
+    <h2>Welcome</h2>
+    <p>This site introduces 20 essential legal acronyms and Latin expressions used in British legal English. Each topic includes example sentences and a short quiz, followed by a practice section and a final assessment.</p>
+
+    <h3>How to Use This Site</h3>
+    <ol>
+        <li>Start with <strong>Acronyms</strong> to explore the first set of terms.</li>
+        <li>Move to <strong>Latin</strong> for the second set.</li>
+        <li>Use <strong>Practice</strong> to consolidate your understanding.</li>
+        <li>Finish with the <strong>Assessment</strong> to test your knowledge.</li>
+    </ol>
+
+    <h3>About Structure B</h3>
+    <p>Structure B organises learning by topic. Acronyms and Latin expressions each have their own section with examples and quizzes. The practice section contains a tiered lesson, and the assessment section provides a full mixed quiz.</p>
+</div>
+
+<!-- ACRONYMS SECTION -->
+<div id="acronyms" class="section">
+    <h2>Acronyms</h2>
+
+    <h3>Example Sentences</h3>
+
+    <details><summary>ADR – Alternative Dispute Resolution</summary>
+        <p>“The parties agreed to attempt ADR before issuing proceedings in the High Court.”</p>
+    </details>
+
+    <details><summary>CPR – Civil Procedure Rules</summary>
+        <p>“Under the CPR, the claimant must file and serve a compliant witness statement by the specified deadline.”</p>
+    </details>
+
+    <details><summary>ECHR – European Convention on Human Rights</summary>
+        <p>“The applicant alleged that the decision breached Article 6 of the ECHR.”</p>
+    </details>
+
+    <details><summary>ECJ – European Court of Justice</summary>
+        <p>“The ECJ held that the national measure was incompatible with EU law.”</p>
+    </details>
+
+    <details><summary>EAW – European Arrest Warrant</summary>
+        <p>“The magistrates’ court considered whether the EAW was proportionate in the circumstances.”</p>
+    </details>
+
+    <details><summary>IP – Intellectual Property</summary>
+        <p>“The defendant was found to have infringed the claimant’s IP rights by distributing unauthorised copies.”</p>
+    </details>
+
+    <details><summary>JR – Judicial Review</summary>
+        <p>“The claimant sought JR of the local authority’s refusal to provide housing assistance.”</p>
+    </details>
+
+    <details><summary>NDA – Non‑Disclosure Agreement</summary>
+        <p>“The consultant signed an NDA prohibiting disclosure of confidential commercial information.”</p>
+    </details>
+
+    <details><summary>T&amp;Cs – Terms and Conditions</summary>
+        <p>“The consumer argued that the T&amp;Cs were unfair under the 2015 Act.”</p>
+    </details>
+
+    <details><summary>UKSC – Supreme Court of the United Kingdom</summary>
+        <p>“The UKSC dismissed the appeal, finding no error of law in the tribunal’s reasoning.”</p>
+    </details>
+
+    <h3>Mini‑Quiz: Acronyms</h3>
+    <div id="acronym-quiz"></div>
+</div>
+
+<!-- LATIN SECTION -->
+<div id="latin" class="section">
+    <h2>Latin Expressions</h2>
+
+    <h3>Example Sentences</h3>
+
+    <details><summary>ab initio – from the beginning</summary>
+        <p>“The contract was void ab initio due to fraudulent misrepresentation.”</p>
+    </details>
+
+    <details><summary>bona fide – in good faith</summary>
+        <p>“The purchaser acted bona fide and without notice of the prior charge.”</p>
+    </details>
+
+    <details><summary>de facto – in fact / in practice</summary>
+        <p>“He was the de facto manager despite lacking formal appointment.”</p>
+    </details>
+
+    <details><summary>de jure – by law</summary>
+        <p>“The council remained the de jure owner of the land.”</p>
+    </details>
+
+    <details><summary>ex parte – by or for one party only</summary>
+        <p>“The court granted an ex parte interim injunction pending a full hearing.”</p>
+    </details>
+
+    <details><summary>habeas corpus – challenge to unlawful detention</summary>
+        <p>“A writ of habeas corpus was sought to challenge the legality of the detention.”</p>
+    </details>
+
+    <details><summary>ipso facto – by that very fact</summary>
+        <p>“The breach did not ipso facto terminate the agreement.”</p>
+    </details>
+
+    <details><summary>mens rea – guilty mind</summary>
+        <p>“The prosecution failed to prove the requisite mens rea for the offence.”</p>
+    </details>
+
+    <details><summary>prima facie – on the face of it</summary>
+        <p>“The claimant established a prima facie case of discrimination.”</p>
+    </details>
+
+    <details><summary>ultra vires – beyond legal powers</summary>
+        <p>“The decision was quashed on the basis that the authority had acted ultra vires.”</p>
+    </details>
+
+    <h3>Mini‑Quiz: Latin Expressions</h3>
+    <div id="latin-quiz"></div>
+</div>
+
+<!-- PRACTICE SECTION -->
+<div id="practice" class="section">
+    <h2>Practice – Tiered Lesson</h2>
+
+    <h3>Tier 1 – Recognition</h3>
+    <p><strong>Question:</strong> What does <em>prima facie</em> mean?</p>
+    <ul>
+        <li>On the face of it (correct)</li>
+        <li>Without evidence</li>
+        <li>After full investigation</li>
+        <li>Subject to appeal</li>
+    </ul>
+
+    <h3>Tier 2 – Application</h3>
+    <p><strong>Sentence:</strong> “The authority acted ______ by exceeding its statutory powers.”</p>
+    <ul>
+        <li>mens rea</li>
+        <li><strong>ultra vires (correct)</strong></li>
+        <li>bona fide</li>
+        <li>de jure</li>
+    </ul>
+
+    <h3>Tier 3 – Production</h3>
+    <p><strong>Scenario:</strong> A court grants an urgent injunction without notifying the defendant. What type of application is this?</p>
+    <p><strong>Expected answer:</strong> <em>ex parte</em></p>
+</div>
+
+<!-- ASSESSMENT SECTION -->
+<div id="assessment" class="section">
+    <h2>Assessment – Full Quiz</h2>
+    <p>Test your knowledge across all 20 terms.</p>
+
+    <div id="full-quiz"></div>
+    <button onclick="checkFull()">Check all answers</button>
+    <p id="full-score"></p>
+</div>
+
+</main>
+
+<script>
+/* -------------------------
+   Acronym Quiz
+------------------------- */
+const acronymQuizData = [
+    { q: "ADR refers to:", options: ["Adverse Damages Recovery", "Alternative Dispute Resolution", "Administrative Duty Regulations", "Arbitration Directive Rules"], correct: 1 },
+    { q: "Under the CPR, parties must:", options: ["Follow criminal sentencing guidelines", "Comply with procedural rules in civil cases", "Register property transactions", "Apply for judicial appointments"], correct: 1 },
+    { q: "The ECHR protects:", options: ["Contractual rights", "Human rights and fundamental freedoms", "Intellectual property", "Corporate governance"], correct: 1 },
+    { q: "The ECJ primarily deals with:", options: ["UK domestic appeals", "EU law interpretation", "Criminal sentencing", "Local authority disputes"], correct: 1 },
+    { q: "An EAW is used to:", options: ["Transfer property", "Request extradition within the EU", "Enforce civil judgments", "Register a company"], correct: 1 }
+];
+
+const acronymContainer = document.getElementById("acronym-quiz");
+
+acronymQuizData.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "quiz-question";
+    div.innerHTML = `
+        <p><strong>${index + 1}. ${item.q}</strong></p>
+        ${item.options.map((opt, i) =>
+            `<label><input type="radio" name="aq${index}" value="${i}"> ${opt}</label><br>`
+        ).join("")}
+        <button onclick="checkAcronym(${index})">Check</button>
+        <p class="feedback" id="feedback-acronym-${index}"></p>
+    `;
+    acronymContainer.appendChild(div);
+});
+
+function checkAcronym(i) {
+    const selected = document.querySelector(`input[name="aq${i}"]:checked`);
+    const feedback = document.getElementById(`feedback-acronym-${i}`);
+    if (!selected) {
+        feedback.textContent = "Please select an answer.";
+        feedback.style.color = "red";
+        return;
+    }
+    if (parseInt(selected.value) === acronymQuizData[i].correct) {
+        feedback.textContent = "Correct.";
+        feedback.style.color = "green";
+    } else {
+        feedback.textContent = "Not quite — revisit the examples above.";
+        feedback.style.color = "red";
+    }
+}
+
+/* -------------------------
+   Latin Quiz
+------------------------- */
+const latinQuizData = [
+    { q: "A contract void ab initio is:", options: ["Valid unless challenged", "Valid but unenforceable", "Invalid from the beginning", "Terminated by agreement"], correct: 2 },
+    { q: "Acting bona fide means acting:", options: ["Recklessly", "In good faith", "Under duress", "With negligence"], correct: 1 },
+    { q: "A de facto manager is one who:", options: ["Has been formally appointed", "Acts as manager in practice", "Manages only part‑time", "Is appointed by statute"], correct: 1 },
+    { q: "An ex parte hearing involves:", options: ["All parties present", "Only one party present", "A jury", "A public consultation"], correct: 1 },
+    { q: "Ultra vires actions are:", options: ["Within legal powers", "Beyond legal powers", "Approved by Parliament", "Required by statute"], correct: 1 }
+];
+
+const latinContainer = document.getElementById("latin-quiz");
+
+latinQuizData.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "quiz-question";
+    div.innerHTML = `
+        <p><strong>${index + 1}. ${item.q}</strong></p>
+        ${item.options.map((opt, i) =>
+            `<label><input type="radio" name="lq${index}" value="${i}"> ${opt}</label><br>`
+        ).join("")}
+        <button onclick="checkLatin(${index})">Check</button>
+        <p class="feedback" id="feedback-latin-${index}"></p>
+    `;
+    latinContainer.appendChild(div);
+});
+
+function checkLatin(i) {
+    const selected = document.querySelector(`input[name="lq${i}"]:checked`);
+    const feedback = document.getElementById(`feedback-latin-${i}`);
+    if (!selected) {
+        feedback.textContent = "Please select an answer.";
+        feedback.style.color = "red";
+        return;
+    }
+    if (parseInt(selected.value) === latinQuizData[i].correct) {
+        feedback.textContent = "Correct.";
+        feedback.style.color = "green";
+    } else {
+        feedback.textContent = "Not quite — revisit the examples above.";
+        feedback.style.color = "red";
+    }
+}
+
+/* -------------------------
+   Full Assessment Quiz
+------------------------- */
+const fullQuizData = [...acronymQuizData, ...latinQuizData];
+
+const fullContainer = document.getElementById("full-quiz");
+
+fullQuizData.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "quiz-question";
+    div.innerHTML = `
+        <p><strong>${index + 1}. ${item.q}</strong></p>
+        ${item.options.map((opt, i) =>
+            `<label><input type="radio" name="fq${index}" value="${i}"> ${opt}</label><br>`
+        ).join("")}
+        <p class="feedback" id="feedback-full-${index}"></p>
+    `;
+    fullContainer.appendChild(div);
+});
+
+function checkFull() {
+    let correctCount = 0;
+    fullQuizData.forEach((item, i) => {
+        const selected = document.querySelector(`input[name="fq${i}"]:checked`);
+        const feedback = document.getElementById(`feedback-full-${i}`);
+        if (!selected) {
+            feedback.textContent = "No answer selected.";
+            feedback.style.color = "red";
+        } else if (parseInt(selected.value) === item.correct) {
+            feedback.textContent = "Correct.";
+            feedback.style.color = "green";
+            correctCount++;
+        } else {
+            feedback.textContent = "Incorrect.";
+            feedback.style.color = "red";
+        }
+    });
+    document.getElementById("full-score").textContent =
+        `You answered ${correctCount} out of ${fullQuizData.length} correctly.`;
+}
+</script>
+
 </body>
 </html>
